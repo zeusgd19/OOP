@@ -1,4 +1,6 @@
-class Aire{
+package Aire;
+
+public class Aire{
     private String nombre;
     private int temperaturaMax;
     private int temperaturaMin;
@@ -57,13 +59,5 @@ class Aire{
 
     public void setTemperatura(int temperatura) {
         this.temperatura = temperatura;
-    }
-}
-public class MainAire {
-    public static void main(String[] args) {
-        Aire a = new Aire("Fujitsu",30,40, 10);
-
-        System.out.println(a);
-
     }
 }

@@ -1,4 +1,6 @@
-class Tienda{
+package Tienda;
+
+public class Tienda{
     private String modeloOrdenador;
     private String marcaOrdenador;
     private double precio;
@@ -35,11 +37,5 @@ class Tienda{
     @Override
     public String toString(){
         return this.marcaOrdenador + " " + this.modeloOrdenador + ": " + this.precio + " €";
-    }
-}
-public class MainTienda {
-    public static void main(String[] args) {
-        Tienda t1 = new Tienda("Asus","TUF-GAMING F15",699.0);
-        System.out.println(t1);
     }
 }

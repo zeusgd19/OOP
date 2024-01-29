@@ -1,4 +1,6 @@
-class Cuenta{
+package Cuenta;
+
+public class Cuenta{
     private String titular;
     private double cantidad;
 
@@ -13,7 +15,7 @@ class Cuenta{
 
     @Override
     public String toString() {
-        return "Cuenta{" +
+        return "Cuenta.Cuenta{" +
                 "titular='" + titular + '\'' +
                 ", cantidad=" + cantidad +
                 '}';
@@ -43,14 +45,5 @@ class Cuenta{
     public void retirar(double cantidad){
         this.cantidad-=cantidad;
         if (this.cantidad < 0) this.cantidad = 0;
-    }
-}
-public class MainCuenta {
-    public static void main(String[] args) {
-        Cuenta c1 = new Cuenta("Darius",400);
-        c1.ingresar(100);
-        c1.retirar(600);
-
-        System.out.println(c1);
     }
 }
