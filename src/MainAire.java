@@ -2,9 +2,11 @@ class Aire{
     private String nombre;
     private int temperaturaMax;
     private int temperaturaMin;
+    private int temperatura;
 
-    public Aire(String nombre,int temperaturaMax,int temperaturaMin){
+    public Aire(String nombre,int temperatura, int temperaturaMax,int temperaturaMin){
         this.nombre = nombre;
+        this.temperatura = temperatura;
         this.temperaturaMax = temperaturaMax;
         this.temperaturaMin = temperaturaMin;
     }
@@ -34,12 +36,33 @@ class Aire{
     }
     @Override
     public String toString(){
-        return this.nombre + " temperatura max: " + this.temperaturaMax + ", temperatura min: " + this.temperaturaMin;
+        return this.nombre + "\n temperatura actual: " + this.temperatura +
+                " \n temperatura max: " +
+                this.temperaturaMax + ", temperatura min: " + this.temperaturaMin;
+    }
+    public void aumentar() {
+        if (this.temperatura + 1 <= this.temperaturaMax){
+            this.temperatura++;
+        }
+    }
+    public void reducir() {
+        if (this.temperatura - 1>= this.temperaturaMin){
+            this.temperatura--;
+        }
+    }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(int temperatura) {
+        this.temperatura = temperatura;
     }
 }
 public class MainAire {
     public static void main(String[] args) {
-        Aire a = new Aire("Fujitsu",30,10);
+        Aire a = new Aire("Fujitsu",30,40, 10);
+
         System.out.println(a);
 
     }
