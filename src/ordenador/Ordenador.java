@@ -1,13 +1,13 @@
-package Tienda;
+package ordenador;
 
-public class Tienda{
+public class Ordenador {
     private String modeloOrdenador;
     private String marcaOrdenador;
     private double precio;
 
-    public Tienda(String marcaOrdenador,String modeloOrdenador,double precio){
-        this.modeloOrdenador = modeloOrdenador;
+    public Ordenador(String marcaOrdenador, String modeloOrdenador, double precio){
         this.marcaOrdenador = marcaOrdenador;
+        this.modeloOrdenador = modeloOrdenador;
         this.precio = precio;
     }
 

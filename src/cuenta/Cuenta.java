@@ -1,4 +1,4 @@
-package Cuenta;
+package cuenta;
 
 public class Cuenta{
     private String titular;
@@ -11,14 +11,6 @@ public class Cuenta{
     public Cuenta(String titular,double cantidad){
         this.titular = titular;
         this.cantidad = cantidad;
-    }
-
-    @Override
-    public String toString() {
-        return "Cuenta.Cuenta{" +
-                "titular='" + titular + '\'' +
-                ", cantidad=" + cantidad +
-                '}';
     }
 
     public String getTitular() {
@@ -35,6 +27,14 @@ public class Cuenta{
 
     public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuenta.Cuenta{" +
+                "titular='" + titular + '\'' +
+                ", cantidad=" + cantidad +
+                '}';
     }
 
     public void ingresar(double cantidad){

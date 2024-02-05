@@ -1,4 +1,4 @@
-package Aire;
+package aire;
 
 import java.util.Scanner;
 

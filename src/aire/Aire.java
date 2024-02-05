@@ -1,4 +1,4 @@
-package Aire;
+package aire;
 
 public class Aire{
     private String nombre;
@@ -36,6 +36,14 @@ public class Aire{
     public void setTemperaturaMin(int temperaturaMin) {
         this.temperaturaMin = temperaturaMin;
     }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(int temperatura) {
+        this.temperatura = temperatura;
+    }
     @Override
     public String toString(){
         return this.nombre + "\n temperatura actual: " + this.temperatura +
@@ -53,11 +61,4 @@ public class Aire{
         }
     }
 
-    public int getTemperatura() {
-        return temperatura;
-    }
-
-    public void setTemperatura(int temperatura) {
-        this.temperatura = temperatura;
-    }
 }

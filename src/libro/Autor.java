@@ -1,4 +1,4 @@
-package Libro;
+package libro;
 
 public class Autor{
     private String nombre;

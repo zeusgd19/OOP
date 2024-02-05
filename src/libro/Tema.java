@@ -1,4 +1,4 @@
-package Libro;
+package libro;
 
 public class Tema{
     private String tema;
