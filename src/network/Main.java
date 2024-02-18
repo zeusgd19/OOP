@@ -6,9 +6,6 @@
 package network;
 
 public class Main {
-    public Main() {
-    }
-
     public static void main(String[] args) {
         Usuario pepe = new Usuario("Pepe");
         Mensaje mensaje = new Mensaje(pepe, "Hola gente estamos activo papi");
