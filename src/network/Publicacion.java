@@ -1,32 +1,22 @@
 package network;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public abstract class Publicacion {
+    private static int cuenta = 0;
     private int id;
     private Usuario usuario;
-    private String fecha;
+    private Date fecha;
     private int likes;
-    private List<String> comentarios;
+    private Set<Comentario> comentarios;
 
     public Publicacion(Usuario usuario) {
-        this.id = (int) (Math.random() * 1000);
+        this.id = cuenta++;
         this.usuario = usuario;
-        for (Publicacion publicacion:usuario.getPublicaciones()) {
-            if(this.id == publicacion.getId()){
-                while(this.id != publicacion.getId()){
-                    this.id = (int) (Math.random() * 1000);
-                }
-            }
-        }
-        Date marcaTemporal = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        fecha = sdf.format(marcaTemporal);
+        this.fecha = new Date();
         this.likes = 0;
-        this.comentarios = new ArrayList<>();
+        this.comentarios = new HashSet<>();
     }
 
     public int getId() {
@@ -45,11 +35,11 @@ public abstract class Publicacion {
         this.usuario = usuario;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -61,14 +51,19 @@ public abstract class Publicacion {
         this.likes = likes;
     }
 
-    public List<String> getComentarios() {
-        return this.comentarios;
+    public Set<Comentario> getComentarios() {
+        return comentarios;
     }
 
-    public void setComentarios(List<String> comentarios) {
+    public void setComentarios(Set<Comentario> comentarios) {
         this.comentarios = comentarios;
     }
-    public void addComentario(String comentario){
+    public void addComentario(Comentario comentario){
         this.comentarios.add(comentario);
+    }
+
+    @Override
+    public String toString(){
+        return this.id + " Tiene: " + this.likes + " likes, " + this.fecha;
     }
 }

@@ -14,9 +14,8 @@ public class Main {
         a.cultivar();
         a.origenIngresos();
 
-        Pepe pepe = new Pepe("Pepe",600);
-        pepe.origenIngresos();
-        pepe.verAnime();
-        pepe.inscritoETT();
+        Desempleado juan = new Desempleado("Juan",500);
+        juan.inscritoETT();
+        juan.verAnime();
     }
 }

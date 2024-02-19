@@ -39,7 +39,7 @@ public class Usuario{
     public void meGusta(Publicacion publicacion){
         publicacion.setLikes(publicacion.getLikes() + 1);
     }
-    public void comentar(Publicacion publicacion,String comentario){
+    public void comentar(Publicacion publicacion,Comentario comentario){
         publicacion.addComentario(comentario);
     }
     public String toString() {

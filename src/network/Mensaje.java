@@ -17,6 +17,7 @@ public class Mensaje extends Publicacion{
     }
     @Override
     public String toString(){
-        return this.mensaje;
+
+        return super.toString() + " " + this.mensaje;
     }
 }

@@ -1,6 +1,6 @@
 package herencia;
 
-public abstract class Desempleado extends Persona{
+public class Desempleado extends Persona{
     public  Desempleado(String nombre,double salario){
         super(nombre,salario);
     }
@@ -11,5 +11,8 @@ public abstract class Desempleado extends Persona{
     @Override
     public void origenIngresos(){
         System.out.println("Consigo el dinero del paro");
+    }
+    public void verAnime(){
+        System.out.println("Veo anime");
     }
 }
