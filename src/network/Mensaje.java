@@ -1,11 +1,6 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package network;
 
-public class Mensaje extends Publicacion {
+public class Mensaje extends Publicacion{
     private String mensaje;
 
     public Mensaje(Usuario usuario, String mensaje) {
@@ -19,5 +14,9 @@ public class Mensaje extends Publicacion {
 
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
+    }
+    @Override
+    public String toString(){
+        return this.mensaje;
     }
 }

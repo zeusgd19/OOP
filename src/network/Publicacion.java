@@ -1,28 +1,39 @@
 package network;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public abstract class Publicacion {
-    private String id;
+    private int id;
     private Usuario usuario;
-    private long marcaTemporal;
+    private String fecha;
     private int likes;
     private List<String> comentarios;
 
     public Publicacion(Usuario usuario) {
-        this.id = this.id;
+        this.id = (int) (Math.random() * 1000);
         this.usuario = usuario;
-        this.marcaTemporal = System.currentTimeMillis();
+        for (Publicacion publicacion:usuario.getPublicaciones()) {
+            if(this.id == publicacion.getId()){
+                while(this.id != publicacion.getId()){
+                    this.id = (int) (Math.random() * 1000);
+                }
+            }
+        }
+        Date marcaTemporal = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        fecha = sdf.format(marcaTemporal);
         this.likes = 0;
-        this.comentarios = new ArrayList();
+        this.comentarios = new ArrayList<>();
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,12 +45,12 @@ public abstract class Publicacion {
         this.usuario = usuario;
     }
 
-    public long getMarcaTemporal() {
-        return this.marcaTemporal;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setMarcaTemporal(long marcaTemporal) {
-        this.marcaTemporal = marcaTemporal;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public int getLikes() {
@@ -56,5 +67,8 @@ public abstract class Publicacion {
 
     public void setComentarios(List<String> comentarios) {
         this.comentarios = comentarios;
+    }
+    public void addComentario(String comentario){
+        this.comentarios.add(comentario);
     }
 }

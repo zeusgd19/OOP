@@ -1,6 +1,6 @@
 package network;
 
-public class Foto extends Publicacion{
+public class Foto extends Publicacion {
     private String nombreArchivo;
     private String titulo;
     public Foto(Usuario usuario, String nombreArchivo, String titulo){
@@ -24,4 +24,11 @@ public class Foto extends Publicacion{
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+    @Override
+    public String toString(){
+
+        return this.titulo + " " + this.nombreArchivo;
+    }
+
+
 }
