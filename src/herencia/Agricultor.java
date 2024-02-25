@@ -2,6 +2,7 @@ package herencia;
 
 public class Agricultor extends Trabajador{
     public Agricultor(String nombre, double salario){
+
         super(nombre,salario);
     }
 

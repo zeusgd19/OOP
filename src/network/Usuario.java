@@ -6,10 +6,12 @@ import java.util.Set;
 public class Usuario{
     private String nombre;
     private Set<Publicacion> publicaciones;
+    private Set<Comentario> comentarios;
 
     public Usuario(String nombre) {
         this.nombre = nombre;
         this.publicaciones = new HashSet<>();
+        this.comentarios = new HashSet<>();
     }
 
     public String getNombre() {
@@ -28,9 +30,21 @@ public class Usuario{
     public void setPublicaciones(Set<Publicacion> publicaciones) {
         this.publicaciones = publicaciones;
     }
+    public Set<Comentario> getComentarios() {
+        return comentarios;
+    }
+    public void setComentarios(Set<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public void addComentario(Comentario comentario){
+        this.comentarios.add(comentario);
+    }
+
     public void addPublicacion(Publicacion publicacion){
         this.publicaciones.add(publicacion);
     }
+
 
     public void recogerPublicaciones(){
         System.out.println(publicaciones);
@@ -45,4 +59,5 @@ public class Usuario{
     public String toString() {
         return "Usuario: " + this.nombre;
     }
+
 }

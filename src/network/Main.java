@@ -26,19 +26,19 @@ public class Main {
         maria.addPublicacion(m);
         juan.addPublicacion(m2);
 
+
         Comentario c = new Comentario(f2,"Muy bonita",maria);
         Comentario c2 = new Comentario(f,"Muy bonita tambien",juan);
         maria.comentar(f2,c);
         juan.comentar(f,c2);
 
-        juan.meGusta(f);
-        pepe.meGusta(f);
         for (Usuario u:usuarios) {
             System.out.println(u);
             for (Publicacion p: u.getPublicaciones()) {
                 System.out.println("\t" + p);
+                System.out.println("\t\t Comentarios: ");
                 for (Comentario com:p.getComentarios()) {
-                    System.out.println("\t\t" + com);
+                    System.out.println("\t\t\t" + com);
                 }
             }
         }

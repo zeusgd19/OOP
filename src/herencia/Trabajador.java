@@ -13,4 +13,5 @@ public abstract class Trabajador extends Persona {
     public void fichar(){
         System.out.println("Ficho a las 8a.m");
     }
+
 }

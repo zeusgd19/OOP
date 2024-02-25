@@ -1,6 +1,6 @@
 package herencia;
 
-public class Obrero extends Trabajador {
+public class Obrero extends Trabajador implements Contratable{
     public Obrero(String nombre,double salario){
 
         super(nombre,salario);
@@ -11,5 +11,10 @@ public class Obrero extends Trabajador {
     @Override
     public void fichar(){
         System.out.println("Ficho a las 10a.m");
+    }
+
+    @Override
+    public void contratar() {
+        System.out.println("Me pueden contratar");
     }
 }

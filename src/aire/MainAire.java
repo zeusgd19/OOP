@@ -20,6 +20,5 @@ public class MainAire {
             }
             if(pulsador.equals("Exit")) break;
         } while (true);
-
     }
 }

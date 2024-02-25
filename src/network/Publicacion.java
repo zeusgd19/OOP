@@ -8,6 +8,9 @@ public abstract class Publicacion {
     private int id;
     private Usuario usuario;
     private Date fecha;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private String fechaString;
+
     private int likes;
     private Set<Comentario> comentarios;
 
@@ -15,6 +18,7 @@ public abstract class Publicacion {
         this.id = cuenta++;
         this.usuario = usuario;
         this.fecha = new Date();
+        this.fechaString = sdf.format(this.fecha);
         this.likes = 0;
         this.comentarios = new HashSet<>();
     }
@@ -33,6 +37,13 @@ public abstract class Publicacion {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getFechaString() {
+        return this.fechaString;
+    }
+    public void setFechaString(String fechaString) {
+        this.fechaString = fechaString;
     }
 
     public Date getFecha() {
@@ -64,6 +75,6 @@ public abstract class Publicacion {
 
     @Override
     public String toString(){
-        return this.id + " Tiene: " + this.likes + " likes, " + this.fecha;
+        return this.id + " Tiene: " + this.likes + " likes, " + this.fechaString;
     }
 }

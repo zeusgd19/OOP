@@ -26,4 +26,8 @@ public abstract class Persona {
     }
 
     public abstract void origenIngresos();
+    @Override
+    public String toString(){
+       return this.nombre + " salario: " + this.salario;
+    }
 }
